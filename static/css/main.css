@@ -1,0 +1,34 @@
+body * {
+    margin: 0;
+    padding: 0;
+}
+
+body > h1 {
+    padding: 20px;
+    background-color: whitesmoke;
+}
+
+#wrapper {
+    width: 970px;
+    margin: 40px auto;
+}
+
+div.registration, div.login {
+    display: inline-block;
+    vertical-align: top;
+}
+
+form > input.form-control {
+    margin: 10px 0;
+    height: 30px;
+    font-size: 10pt;
+}
+
+#wrapper div.login {
+    float: right;
+}
+
+span.error {
+    color: red;
+    font-size: 9pt;
+}

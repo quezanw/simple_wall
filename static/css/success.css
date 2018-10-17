@@ -1,0 +1,95 @@
+body * {
+    margin: 0;
+    padding: 0;
+}
+
+div.header > h1 {
+    font-weight: bold;
+}
+
+div.header > p {
+    padding-top: 1.5em;
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+div.header > p > a {
+    border: 1px solid rgb(39, 19, 59);
+    padding: 10px;
+    border-radius: .25em;
+    color: black;
+}
+
+div.header > p > a:hover {
+    background-color:rgb(111, 111, 235);
+    color: white;
+}
+
+div.header {
+    padding: 10px;
+    background-color: rgb(67, 67, 202);
+    box-shadow: 1em .5em rgb(85, 0, 165);
+    color: white;
+}
+
+div.main-content {
+    padding: 20px;
+    margin-top: 10px;
+}
+
+div.main-content div.col-6 {
+    padding: 0 40px;
+}
+
+div.main-content > div.col-6 > h3 {
+    text-decoration: underline;
+}
+
+div.send-messages > p {
+    padding: 5px 0;
+    margin-bottom: 10px;
+    font-size: 12pt;
+}
+
+form.container-fluid * {
+    display: inline-block;
+    vertical-align: top;
+}
+
+form.container-fluid {
+    padding: 0;
+}
+    form.container-fluid > p.col-2 {
+        font-size: 14pt;
+        padding: 0;
+    }
+
+    form.container-fluid > button {
+        width: 75px;
+    }
+
+div.friends-container > div.row {
+    margin: 20px 0 ;
+}
+
+
+p.message-content {
+    height: 55px;
+    padding: 5px;
+    margin: 0 0 20px 30px;
+    font-size: 12pt;
+    display:inline-block;
+}
+
+#delete {
+    display:inline-block;
+    vertical-align: top;
+}
+
+#delete > button {
+    width: 40px;
+    height: 35px;
+    background-color:white;
+    border: none;
+}

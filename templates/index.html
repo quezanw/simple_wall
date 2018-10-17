@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/main.css') }}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/css/main.css">
+</head>
+
+<body>
+    <h1>Login and Registration</h1>
+    <div class="container-fluid" id="wrapper">
+        <div class="registration container-fluid col-4">
+            <h2>Register here</h2>
+            <form class="form-horizontal" action="/register" method="post">
+                {% with messages = get_flashed_messages(category_filter=["first_name_error"]) %}
+                {% if messages %}
+                {% for message in messages: %}
+                <span class="error">{{ message }}</span>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <input class="form-control" value="{{session["first_name"]}}" name="first_name" placeholder="First Name" type="text">
+
+                {% with messages = get_flashed_messages(category_filter=["last_name_error"]) %}
+                {% if messages %}
+                {% for message in messages: %}
+                <span class="error">{{ message }}</span>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <input class="form-control" value="{{session["last_name"]}}" name="last_name" placeholder="Last Name" type="text">
+
+                {% with messages = get_flashed_messages(category_filter=["email_error"]) %}
+                {% if messages %}
+                {% for message in messages: %}
+                <span class="error">{{ message }}</span>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <input class="form-control" value="{{session["email"]}}" name="email" placeholder="ninjaman@gmail.com" type="text">
+
+                {% with messages = get_flashed_messages(category_filter=["password_error"]) %}
+                {% if messages %}
+                {% for message in messages: %}
+                <span class="error">{{ message }}</span>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <input class="form-control" name="password" placeholder="password" type="text">
+
+                {% with messages = get_flashed_messages(category_filter=["confirm_password_error"]) %}
+                {% if messages %}
+                {% for message in messages: %}
+                <span class="error">{{ message }}</span>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <input class="form-control" name="confirm_password" placeholder="confirm password" type="text">
+
+                <button type="submit" class="btn btn-primary">register</button>
+            </form>
+        </div>
+        <div class="login col-4">
+            <h3>Login Here!</h3>
+            <form action="/login" method="post">
+                <span class="error">{% with messages = get_flashed_messages(category_filter=["login_error"]) %}
+                {% if messages %}
+                {% for message in messages: %}
+                <span class="error">{{ message }}</span>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}</span>
+                <input class="form-control" name="login_email" placeholder="email" type="text">
+                <input class="form-control" name="login_password" placeholder="password" type="text">
+
+                <button type="submit" class="btn btn-danger">login</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
